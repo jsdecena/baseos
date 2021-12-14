@@ -1,8 +1,9 @@
-# Base OS
+# Base PHP
 
 ## Techstack
 
-- PHP 8.0
+- Debian 11/Bullseye
+- PHP 8.0/8.1
 - NODEJS 14
 - Python 2.7
 - PHP Opcache
