@@ -1,4 +1,4 @@
-FROM jsdecena/php8-fpm:1.0
+FROM jsdecena/php8-fpm:8.1.0
 
 ENV DEBIAN_FRONTEND=noninteractive
 
