@@ -4,10 +4,11 @@
 
 - Debian 11/Bullseye
 - PHP 8.0/8.1
-- NODEJS 14
+- NodeJS 14
 - Python 2.7
 - PHP Opcache
 - Supervisor
+- Chrome Plugin for Browser testing
 - Others see Dockerfile
 
 ## Docker build commands
