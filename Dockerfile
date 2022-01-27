@@ -13,6 +13,7 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
 
 RUN apt install -y \
     ./google-chrome-stable_current_amd64.deb \
+    software-properties-common \
     wkhtmltopdf \
     pdftk \
     network-manager \
@@ -27,11 +28,11 @@ RUN apt install -y \
     libmagickwand-dev \
     libsqlite3-dev \
     libsqlite3-0  \
+    libpng-dev \
+    libzip-dev \
     nodejs \
     mariadb-client \
-    python2.7 && \
-    ln -s /usr/bin/python2.7 /usr/local/bin/python && \
-    ln -s /usr/bin/nodejs /usr/local/bin/node
+    python2.7
 
 # Install image magic
 RUN pecl install imagick
@@ -41,9 +42,6 @@ RUN docker-php-ext-configure gd --with-jpeg && \
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Copy supervisor config inside the container
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Enable opcache
 COPY php/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
